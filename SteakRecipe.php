@@ -159,7 +159,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
   <!-- end .sidebar1 --></div>
   <div class="content">
     <h1>Simple Steak</h1>
-    <p><img src="http://i247.photobucket.com/albums/gg158/MDA2008/MDA2010/cooked_ribeye.jpg" alt="Steak" width="543" height="295" /></p>
+    <p><img src="EatGreen/steak.jpg" alt="Steak" width="543" height="295" /></p>
     <p><strong>Ingredients</strong></p>
     <ul>
     <li>1 12 oz. Steak Cut </li>
