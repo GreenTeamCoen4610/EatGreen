@@ -172,10 +172,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
     <p>
     <html>
     <body>
-    
+    include("math.php");
     <form action="math.php" method="post">
     Convertion Type: <input type="text" convertCategory="convertCategory"   /><br />
-    Convertion Amount: <input tpye="text" Input="Input" /><br />
+    Convertion Amount: <input type="text" Input="Input" /><br />
     <input type="submit" />
     </form>
     </body>
