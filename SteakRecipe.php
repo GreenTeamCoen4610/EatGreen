@@ -121,8 +121,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
     <!-- end .header --></div>
   <div class="sidebar1">
     <ul class="nav">
-      <li><a href="#"><strong>User Profile</strong></a></li>
+      <li><a href="#"><strong>My User Profile</strong></a></li>
+      <li><a href="#"><strong>Create a New User Profile</strong></a></li>
       <li><a href="#"><strong>Recipes</strong></a></li>
+      <li><a href="#"><strong>Create a New Recipe</strong></a></li>
       <li><a href="#"><strong>Kitchen Tools</strong></a></li>
     </ul>
     <br>
