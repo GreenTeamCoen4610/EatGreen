@@ -174,9 +174,9 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
     <body>
     include("math.php");
     <form action="math.php" method="post">
-    Convertion Type: <input type="text" convertCategory="convertCategory"   /><br />
-    Convertion Amount: <input type="text" Input="Input" /><br />
-    <input type="submit" />
+    Convertion Type: <input type="text" convertCategory="convertCategory"><br>
+    Convertion Amount: <input type="text" amount="amount"><br>
+    <input type="submit">
     </form>
     </body>
     </html>
