@@ -166,30 +166,156 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background
   <!-- end .sidebar1 --></div>
   <div class="content">
     <h1>Kitchen Tools</h1>
-    <p>
-</p>
-    <h2>Clearing Method</h2>
+    <p></p>
+    <h2>Conversion Tool&nbsp;</h2>
     <p>
     <html>
     <body>
-    include("math.php");
-    <form action="math.php" method="post">
-    Convertion Type: <input type="text" convertCategory="convertCategory"><br>
-    Convertion Amount: <input type="text" amount="amount"><br>
-    <input type="submit">
-    </form>
+    <?php
+	$convert_array[ozml] = "ounces to milliliters";
+	$convert_array[mloz] = "milliliters to ounces";
+	$convert_array[tbts] = "tablespoons to teaspoons";
+	$convert_array[tstb] = "teaspoons to tablespoons";
+	$convert_array[cppt] = "cups to pints";
+	$convert_array[ptcp] = "pints to cups";
+	$convert_array[gaqt] = "gallons to quarts";
+	$convert_array[qtga] = "quarts to gallons";
+	$convert_array[ozpt] = "ounces to pints";
+	$convert_array[ptoz] = "pints to ounces";
+	$convert_array[tbml] = "tablespoons to milliliter";
+	$convert_array[mltb] = "milliliter to tablespoons";
+	?>
+    <form action="/" method="post">
+	
+    <p>
+	Enter a number:<br />
+	<input type="text" name="value1" size="10"/>
+    <select name="convert">
+	<option value="ozml">Ounces to Millilitres</option>
+	<option value="mloz">Millilitres to Ounces</option>
+	<option value="tbts">Tablespoons to Teaspoons</option>
+	<option value="tstb">Teaspoons to Tablespoons</option>
+	<option value="cppt">Cups to Pints</option>
+	<option value="ptcp">Pints to Cups</option>
+	<option value="gaqt">Gallons to Quarts</option>
+	<option value="qtga">Quarts to Gallons</option>
+	<option value="ozpt">Ounces to Pints</option>
+	<option value="ptoz">Pints to Ounces</option>
+	<option value="tbml">Tablespoons to Millilitres</option>
+	<option value="mltb">Millilitres to Tablespoons</option>
+	</select>
+	<input type="submit">
+	</form>
+	<?php
+    if(!($convert))
+    {
+    	$con_sel = "ozml";
+    }
+    else
+    {
+    	$con_sel = $convert;
+    }
+	?>
+	
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+
+	<?php
+	trim($value1);
+	$valuetemp = str_replace(",", "", $value1);
+	$value = str_replace(" ", "", $valuetemp);
+	if(!(is_numeric($value)))
+	{
+		$value="";
+		$msg_warn = echo("Type a number, no letters.");
+	}
+	$check = substr($value, 0, 1);
+	
+	
+	switch($convert)
+    {
+	case "ozml":
+        $result = $value*29.5735;
+        $unit1 = "ounce(s)";
+        $unit1 .= "&nbsp;(oz)";
+        $unit2 = "milliliters (ml)";
+	break;
+	case "mloz":
+        $result = $value*0.033814;
+        $unit1 = "milliliter(s)";
+        $unit1 .= "&nbsp;(ml)";
+        $unit2 = "ounce(s) (oz)";
+	break;
+	case "tbts":
+        $result = $value*3;
+        $unit1 = "tablespoon(s)";
+        $unit1 .= "&nbsp;(tbsp)";
+        $unit2 = "teaspoon(s) (tsp)";
+	break;
+	case "tstb":
+        $result = $value*(1/3);
+        $unit1 = "teaspoon(s)";
+        $unit1 .= "&nbsp;(tsp)";
+        $unit2 = "tablespoon(s) (tbsp)";
+	break;
+	case "cppt":
+        $result = $value*0.5;
+        $unit1 = "cup(s)";
+        $unit1 .= "&nbsp;(C)";
+        $unit2 = "pint(s) (pt)";
+	break;
+	case "ptcp":
+        $result = $value*2;
+        $unit1 = "pint(s)";
+        $unit1 .= "&nbsp;(pt)";
+        $unit2 = "cup(s) (C)";
+	break;
+	case "gaqt":
+        $result = $value*4;
+        $unit1 = "gallon(s)";
+        $unit1 .= "&nbsp;(gal)";
+        $unit2 = "quart(s) (qt)";
+	break;
+	case "qtga":
+        $result = $value*0.25;
+        $unit1 = "quart(s)";
+        $unit1 .= "&nbsp;(qt)";
+        $unit2 = "gallon(s) (gal)";
+	break;
+	case "ozpt":
+        $result = $value*0.0625;
+        $unit1 = "ounce(s)";
+        $unit1 .= "&nbsp;(oz)";
+        $unit2 = "pint(s) (pt)";
+	break;
+	case "ptoz":
+        $result = $value*16;
+        $unit1 = "pint(s)";
+        $unit1 .= "&nbsp;(pt)";
+        $unit2 = "ounce(s) (oz)";
+	break;
+	case "tbml":
+        $result = $value*14.7868;
+        $unit1 = "tablespoon(s)";
+        $unit1 .= "&nbsp;(Tbs)";
+        $unit2 = "milliliter(s) (ml)";
+	break;
+	case "mltb":
+        $result = $value*0.067628;
+        $unit1 = "milliliter(s)";
+        $unit1 .= "&nbsp;(ml)";
+        $unit2 = "tablespoon(s) (Tbs)";
+	break;
+	?>
     </body>
     </html>
     </p>
-    <h3>Logo Replacement</h3>
-    <p>An image placeholder was used in this layout in the .header where you'll likely want to place  a logo. It is recommended that you remove the placeholder and replace it with your own linked logo. </p>
-    <p> Be aware that if you use the Property inspector to navigate to your logo image using the SRC field (instead of removing and replacing the placeholder), you should remove the inline background and display properties. These inline styles are only used to make the logo placeholder show up in browsers for demonstration purposes. </p>
-    <p>To remove the inline styles, make sure your CSS Styles panel is set to Current. Select the image, and in the Properties pane of the CSS Styles panel, right click and delete the display and background properties. (Of course, you can always go directly into the code and delete the inline styles from the image or placeholder there.)</p>
-    <h4>Backgrounds</h4>
-    <p>By nature, the background color on any div will only show for the length of the content. This means if you're using a background color or border to create the look of a side column, it won't extend all the way to the footer but will stop when the content ends. If the .content div will always contain more content, you can place a border on the .content div to divide it from the column.</p>
-    <!-- end .content --></div>
-  <div class="footer">
-    <p>This .footer contains the declaration position:relative; to give Internet Explorer 6 hasLayout for the .footer and cause it to clear correctly. If you're not required to support IE6, you may remove it.</p>
+    <h3></h3>
+    <p></p>
+    <p></p>
+    <p></p>
+    <h4></h4>
+    <p></p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 </body>
